@@ -38,12 +38,12 @@ RUN ln -sfn /usr/bin/php5.6 /etc/alternatives/php
 # Install OCI8
 RUN mkdir -p /opt/oracle && cd /opt/oracle
 
-RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/FnqCMt5WsXOEfg -O instantclient-basic-linux.x64-12.2.0.1.0.zip
-RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/ZjgHZxJ7frL7kw -O instantclient-jdbc-linux.x64-12.2.0.1.0.zip
-RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/mPH2GwBlsBUv9Q -O instantclient-odbc-linux.x64-12.2.0.1.0-2.zip
-RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/7Gi116pkWeZQvA -O instantclient-sdk-linux.x64-12.2.0.1.0.zip
-RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/O2q2sa9PEu7xgg -O instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
-RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/x_0ZkHIjIFAzKg -O instantclient-tools-linux.x64-12.2.0.1.0.zip
+RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/FnqCMt5WsXOEfg -O /opt/oracle/instantclient-basic-linux.x64-12.2.0.1.0.zip
+RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/ZjgHZxJ7frL7kw -O /opt/oracle/instantclient-jdbc-linux.x64-12.2.0.1.0.zip
+RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/mPH2GwBlsBUv9Q -O /opt/oracle/instantclient-odbc-linux.x64-12.2.0.1.0-2.zip
+RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/7Gi116pkWeZQvA -O /opt/oracle/instantclient-sdk-linux.x64-12.2.0.1.0.zip
+RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/O2q2sa9PEu7xgg -O /opt/oracle/instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
+RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/x_0ZkHIjIFAzKg -O /opt/oracle/instantclient-tools-linux.x64-12.2.0.1.0.zip
 
 #ADD supporting_files/zip/instantclient-basic-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-basic-linux.x64-12.2.0.1.0.zip
 #ADD supporting_files/zip/instantclient-jdbc-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-jdbc-linux.x64-12.2.0.1.0.zip
