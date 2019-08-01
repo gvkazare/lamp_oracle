@@ -36,13 +36,21 @@ RUN add-apt-repository -y ppa:ondrej/php && \
 RUN ln -sfn /usr/bin/php5.6 /etc/alternatives/php
 
 # Install OCI8
-RUN mkdir -p /opt/oracle 
-ADD supporting_files/zip/instantclient-basic-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-basic-linux.x64-12.2.0.1.0.zip
-ADD supporting_files/zip/instantclient-jdbc-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-jdbc-linux.x64-12.2.0.1.0.zip
-ADD supporting_files/zip/instantclient-odbc-linux.x64-12.2.0.1.0-2.zip /opt/oracle/instantclient-odbc-linux.x64-12.2.0.1.0-2.zip
-ADD supporting_files/zip/instantclient-sdk-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-sdk-linux.x64-12.2.0.1.0.zip
-ADD supporting_files/zip/instantclient-sqlplus-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
-ADD supporting_files/zip/instantclient-tools-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-tools-linux.x64-12.2.0.1.0.zip 
+RUN mkdir -p /opt/oracle && cd /opt/oracle
+
+RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/FnqCMt5WsXOEfg -O instantclient-basic-linux.x64-12.2.0.1.0.zip
+RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/ZjgHZxJ7frL7kw -O instantclient-jdbc-linux.x64-12.2.0.1.0.zip
+RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/mPH2GwBlsBUv9Q -O instantclient-odbc-linux.x64-12.2.0.1.0-2.zip
+RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/7Gi116pkWeZQvA -O instantclient-sdk-linux.x64-12.2.0.1.0.zip
+RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/O2q2sa9PEu7xgg -O instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
+RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/x_0ZkHIjIFAzKg -O instantclient-tools-linux.x64-12.2.0.1.0.zip
+
+#ADD supporting_files/zip/instantclient-basic-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-basic-linux.x64-12.2.0.1.0.zip
+#ADD supporting_files/zip/instantclient-jdbc-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-jdbc-linux.x64-12.2.0.1.0.zip
+#ADD supporting_files/zip/instantclient-odbc-linux.x64-12.2.0.1.0-2.zip /opt/oracle/instantclient-odbc-linux.x64-12.2.0.1.0-2.zip
+#ADD supporting_files/zip/instantclient-sdk-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-sdk-linux.x64-12.2.0.1.0.zip
+#ADD supporting_files/zip/instantclient-sqlplus-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
+#ADD supporting_files/zip/instantclient-tools-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-tools-linux.x64-12.2.0.1.0.zip 
 
 RUN unzip /opt/oracle/instantclient-basic*.zip -d /opt/oracle && unzip /opt/oracle/instantclient-jdbc*.zip -d /opt/oracle && unzip /opt/oracle/instantclient-odbc*.zip -d /opt/oracle && unzip /opt/oracle/instantclient-sdk*.zip -d /opt/oracle && unzip /opt/oracle/instantclient-sqlplus*.zip -d /opt/oracle &&unzip /opt/oracle/instantclient-tools*.zip -d /opt/oracle
 RUN mv /opt/oracle/instantclient_12_2 /opt/oracle/instantclient
