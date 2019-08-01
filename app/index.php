@@ -5,7 +5,7 @@ $db = new PDO('mysql:host=localhost', 'root', null);
 <html lang=en>
 <head>
     <meta charset=utf-8>
-    <title>Hello World from Docker-LAMP</title>
+    <title>Hello World from LAMP ORACLE</title>
 
     <style>
         @import 'https://fonts.googleapis.com/css?family=Montserrat|Raleway|Source+Code+Pro';
@@ -31,12 +31,12 @@ $db = new PDO('mysql:host=localhost', 'root', null);
 <body>
     <div class="container">
         <header>
-            <img src="https://cdn.rawgit.com/mattrayner/docker-lamp/831976c022782e592b7e2758464b2a9efe3da042/docs/logo.svg" alt="Docker LAMP logo" />
-            <h2>Welcome to <a href="https://github.com/mattrayner/docker-lamp" target="_blank">Docker-Lamp</a> from gvkazare/lamp</h2>
+            <h2>Welcome to:</h2>
+            <h1>gvkazare/lamp_oracle</h1>
         </header>
         <article>
             <p>
-                For documentation, <a href="https://github.com/mattrayner/docker-lamp" target="_blank">click here</a>.
+                For documentation, <a href="https://github.com/gvkazare/lamp_oracle" target="_blank">click here</a>.
             </p>
         </article>
         <section>
@@ -45,9 +45,10 @@ OS: <?php echo php_uname('s'); ?><br/>
 Apache: <?php echo apache_get_version(); ?><br/>
 MySQL Version: <?php echo $db->getAttribute( PDO::ATTR_SERVER_VERSION ); ?><br/>
 PHP Version: <?php echo phpversion(); ?><br/>
-phpMyAdmin Version: <?php echo getenv('PHPMYADMIN_VERSION'); ?>
+phpMyAdmin Version: <?php echo getenv('PHPMYADMIN_VERSION'); ?><br/>
             </pre>
         </section>
     </div>
+
 </body>
 </html>
