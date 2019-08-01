@@ -30,7 +30,7 @@ RUN add-apt-repository -y ppa:ondrej/php && \
   apt-get -y autoremove && \
   echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
   pip3 install --upgrade pip && \
-  pip install pymysql paramiko textfsm tabulate
+  pip install pymysql pycurl paramiko textfsm tabulate pika cx_Oracle crontab
 
 # Update CLI PHP to use 5.6
 RUN ln -sfn /usr/bin/php5.6 /etc/alternatives/php
