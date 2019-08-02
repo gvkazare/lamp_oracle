@@ -45,6 +45,8 @@ RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/7Gi116pkWeZQvA 
 RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/O2q2sa9PEu7xgg -O /opt/oracle/instantclient-sqlplus-linux.x64-12.2.0.1.0.zip
 RUN wget https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/x_0ZkHIjIFAzKg -O /opt/oracle/instantclient-tools-linux.x64-12.2.0.1.0.zip
 
+RUN chmod 777 /opt/oracle/*
+
 #ADD supporting_files/zip/instantclient-basic-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-basic-linux.x64-12.2.0.1.0.zip
 #ADD supporting_files/zip/instantclient-jdbc-linux.x64-12.2.0.1.0.zip /opt/oracle/instantclient-jdbc-linux.x64-12.2.0.1.0.zip
 #ADD supporting_files/zip/instantclient-odbc-linux.x64-12.2.0.1.0-2.zip /opt/oracle/instantclient-odbc-linux.x64-12.2.0.1.0-2.zip
