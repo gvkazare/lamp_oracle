@@ -119,6 +119,9 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php composer-setup.php && \
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/local/bin/composer
+    
+#for python 
+RUN ln -s /usr/bin/python3.5 /usr/local/bin/python3.5
 
 ENV MYSQL_PASS:-$(pwgen -s 12 1)
 # config to enable .htaccess
@@ -136,5 +139,5 @@ ENV PHP_POST_MAX_SIZE 10M
 # Add volumes for the app and MySql
 VOLUME  ["/etc/mysql", "/var/lib/mysql", "/app" ]
 
-EXPOSE 22 80 443 3306
+EXPOSE 80 443 3306
 CMD ["/run.sh"]
