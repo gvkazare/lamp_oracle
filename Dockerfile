@@ -23,11 +23,11 @@ RUN groupmod -g ${BOOT2DOCKER_GID} staff
 # Install packages
 ENV DEBIAN_FRONTEND noninteractive
 RUN add-apt-repository -y ppa:ondrej/php && \
+  add-apt-repository ppa:openjdk-r/ppa && \
   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C && \
   apt-get update && \
   apt-get -y upgrade && \
-  add-apt-repository ppa:linuxuprising/java && \
-  apt-get -y install oracle-java11-installer-local nano mc alien python3-pip python-virtualenv supervisor wget git apache2 php-xdebug libapache2-mod-php5.6 mysql-server php5.6 php5.6-mysql pwgen php5.6-apc php5.6-mcrypt php5.6-gd php5.6-xml php5.6-mbstring php5.6-gettext zip unzip php5.6-zip php5.6-dev php5.6-cli php-pear && \
+  apt-get -y install openjdk-11-jdk nano mc alien python3-pip python-virtualenv supervisor wget git apache2 php-xdebug libapache2-mod-php5.6 mysql-server php5.6 php5.6-mysql pwgen php5.6-apc php5.6-mcrypt php5.6-gd php5.6-xml php5.6-mbstring php5.6-gettext zip unzip php5.6-zip php5.6-dev php5.6-cli php-pear && \
   apt-get -y autoremove && \
   echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
   pip3 install --upgrade pip && \
